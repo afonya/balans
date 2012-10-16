@@ -1,0 +1,41 @@
+:accounts:
+  :MyPhone:
+    :login: "9100000000"
+    :password: "1111"
+    :operator: "mts"
+  :iPadInternet:
+    :login: "9050000000"
+    :password: "1111"
+    :custom: "login"
+    :operator: "beeline"
+  :Onlime:
+    :login: "11111111"
+    :password: "11111111"
+    :custom: "Войти"
+    :operator: "onlime"
+    
+:operator:
+  :beeline:
+    :login_url: "https://uslugi.beeline.ru/"
+    :form_id: 0
+    :field_login: "userName"
+    :field_password: "password"
+    :field_custom: "ecareAction"
+    :custom_url: "https://uslugi.beeline.ru/vip/prepaid/refreshedPrepaidBalance.jsp"
+    :balans_regexp: "\s+(.+)&nbsp;.+&nbsp;<small class=\"gray\">"
+
+  :mts:
+    :login_url: "https://ip.mts.ru/selfcarepda/security.mvc/logon"
+    :form_id: 0
+    :field_login: "username"
+    :field_password: "password"
+    :balans_regexp: "<br\/>Баланс: <strong>(.+) руб.<\/strong>"
+  
+  :onlime:
+    :login_url: "https://my.onlime.ru/"
+    :form_id: 0
+    :field_login: "login_credentials[login]"
+    :field_password: "login_credentials[password]"
+    :field_custom: "commit"
+    :custom_url: "https://my.onlime.ru/json/cabinet/"
+    :balans_regexp: "\"balance\":(.+\d*),\"lock"
